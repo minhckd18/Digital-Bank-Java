@@ -14,9 +14,6 @@ Method Transfer() và Withdraw() của SavingsAccount Class được viết lạ
 
 Khi chạy test cho 2 method này, sẽ xảy ra tạo mới customer, account, transaction và lưu vào các file binary.
 
-Do vậy chỉ có thể chạy test được 1 lần, vì những lần sau, vì không thể tạo mới các
+Do vậy chỉ có thể chạy test được 1 lần, vì những lần sau không thể tạo mới các
 customer và account.
-
-Ngoài ra, khi chạy test, em có gọi chức năng Tra cứu lịch sử để thể hiện sự thay đổi
-lúc trước và sau khi giao dịch thành công.
 
