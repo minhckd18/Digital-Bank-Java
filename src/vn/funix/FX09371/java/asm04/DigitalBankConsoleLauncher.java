@@ -12,8 +12,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Scanner;
 
-public class Asm4 {
-    // Initialize base data
+public class DigitalBankConsoleLauncher {
     public static final String AUTHOR = "FX09371";
     public static final String VERSION = "4.0.0";
     public static Scanner scanner = new Scanner(System.in);
@@ -22,11 +21,15 @@ public class Asm4 {
     public static void main(String[] args) {
 
         displayProgramHeader();
+
         while (true) {
             displayMenu();
+
+            // get user input as an integer
             List<Customer> customerList = CustomerDao.list();
             int inputInt;
-            // Chỉ có thể dùng chức năng 3, 4, 5, 6 sau khi đã thêm danh sách khách hàng
+
+            // Block feature 3, 4, 5 and 6 until a customer list is created
             if (customerList.isEmpty()) {
                 System.out.println("Chưa có khách hàng nào trong danh sách, chỉ có thể dùng chức năng 0, 1 và 2");
                 System.out.print("Chọn chức năng: ");
@@ -35,6 +38,7 @@ public class Asm4 {
                 System.out.print("Chọn chức năng: ");
                 inputInt = Utils.getInputInt(0, 6);
             }
+
             switch (inputInt) {
                 case 1:
                     showCustomer();
@@ -110,6 +114,7 @@ public class Asm4 {
         while (true) {
             System.out.println("Nhập số CCCD của khách hàng:");
             String customerId;
+
             try {
                 customerId = User.validateCustomerId1(scanner.nextLine());
             } catch (CustomerIdNotValidException e) {
@@ -117,6 +122,7 @@ public class Asm4 {
                 continue;
             }
 
+            // Try to add new saving account. If false, restart while loop to get new customerId
             if (activeBank.addSavingAccount(scanner, customerId)) {
                 System.out.println("Đã thêm tài khoản ATM mới cho người dùng có " +
                         "số CCCD: " + customerId);

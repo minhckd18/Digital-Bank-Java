@@ -1,6 +1,6 @@
 package vn.funix.FX09371.java.asm04.models;
 
-import vn.funix.FX09371.java.asm03.models.Utils;
+import vn.funix.FX09371.java.asm04.common.Utils;
 import vn.funix.FX09371.java.asm04.exception.CustomerIdNotValidException;
 
 import java.io.Serializable;

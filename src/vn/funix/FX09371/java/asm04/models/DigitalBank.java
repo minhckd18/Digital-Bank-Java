@@ -67,6 +67,7 @@ public class DigitalBank extends Bank {
                 continue;
             }
 
+            // Try add new saving account. If false, restart while loop to get new accountNumber
             if (customer.addSavingAccount(scanner, accountNumber)) {
                 return true;
             }
